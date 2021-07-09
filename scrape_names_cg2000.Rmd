@@ -1,0 +1,36 @@
+---
+title: "Untitled"
+author: "Gabe Mednick"
+date: "7/9/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(rvest)
+
+```
+
+```{r}
+page = seq(1,20)
+crypto_urls <- paste0("https://www.coingecko.com/en?page=", page)
+
+get_names <- function(i){
+read_html(i) %>% 
+  html_nodes(".font-bold.tw-justify-between") %>% 
+  html_text() %>% 
+  as_tibble()
+}
+names_list <- map(crypto_urls, get_names)
+
+names_df <- bind_rows(names_list) %>% 
+  mutate(value = str_remove_all(value, "\n"))
+
+write_rds(names_df, "crypto_names2000")
+```
+
+

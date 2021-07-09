@@ -1,0 +1,14 @@
+name: bitcoin-dashboard
+title: bitcoin-dashboard
+username:
+account: biolight-informatics
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4363329
+bundleId: 4804414
+url: https://biolight-informatics.shinyapps.io/bitcoin-dashboard/
+when: 1625856019.22095
+lastSyncTime: 1625856019.22096
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app_sandbox.Rmd|btc-dashboard/app1.R|scrape_names_cg2000.Rmd
